@@ -1,5 +1,7 @@
 # cse210-student-template
-This is the starter code for students in CSE 210.
+# current student is Mel Vickery
+# This is my 2nd programing class using VScode
+# I've taken an Excel corse online, and block A I took CSE 111 programing with classes
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
