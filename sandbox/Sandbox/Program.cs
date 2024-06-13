@@ -57,6 +57,10 @@ static double CalculateCircleArea(double radius)
         return area;
     }
     double area = CalculateCircleArea(10);
-    Console.Write(area);
+    Console.WriteLine($"F3:the circle area is: {area.ToString("F3")}");
+
+    int x = 65535;
+    Console.WriteLine($"N: The circle's area is: {x.ToString("N")}");
+}
 }
 

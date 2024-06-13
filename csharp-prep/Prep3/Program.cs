@@ -2,49 +2,62 @@ using System;
 
 class Program
 {
+
+
+
     static void Main(string[] args)
     {
-        Console.Write("What is the Magic Number? :");
-        string userSetGuess = Console.ReadLine();
-<<<<<<< HEAD
-        int magicNumber = int.Parse(userSetGuess);
+        Random randomGenerater = new Random();
 
+        string answer = "wrong";
 
-        string answer = ("yes");
-
-        while (answer == "yes")
+        string playGame = "Y";
+        int numberOfGuess = 0;
+        while (playGame == "Y")
         {
+            int magicNumber = randomGenerater.Next(1, 25);
+            while (answer == "wrong")
+            {
+
+
                 Console.Write("What is your guess? :");
-        string userInputGuess = Console.ReadLine();
-        int userGuess = int.Parse(userInputGuess);
+                string userInputGuess = Console.ReadLine();
+                int userGuess = int.Parse(userInputGuess);
 
 
-        if (userGuess > magicNumber)
-        {
-            Console.WriteLine("Guess lower");
-        }
-        if (userGuess < magicNumber)
-        {
-            Console.WriteLine("Guess Higher");
-        }
-        if (userGuess == magicNumber)
-        {
-            Console.WriteLine("You Guessed the Magic Number!!!");
-            answer = "no";
-        }
-        }
-=======
-        int magicNumber = int.pars(userSetGuess);
+                if (userGuess > magicNumber)
+                {
+                    Console.WriteLine("Guess lower");
+                    playGame = "N";
+                    numberOfGuess += 1;
+                }
+                if (userGuess < magicNumber)
+                {
+                    Console.WriteLine("Guess Higher");
+                    playGame = "N";
+                    numberOfGuess += 1;
 
-        Console.Write("What is your guess? :");
-        string userInputGuess = Console.ReadLine();
-        int userGuess = int.pars(userInputGuess);
+                }
+                if (userGuess == magicNumber)
+                {
+                    numberOfGuess += 1;
+                    Console.WriteLine("You Guessed the Magic Number!!!");
+                    Console.WriteLine($"You got the number in {numberOfGuess} guesses");
 
-        if (userGuess > magicNumber)
-        {
-            Console.WriteLine("Guess lower")
+                    answer = "correct";
+                }
+
+            }
+            Console.WriteLine("Would you like to play again? (Y/N)");
+
+
+            string reply = Console.ReadLine();
+            if (reply == "Y")
+            {
+                playGame = "Y";
+                answer = "wrong";
+            }
         }
 
->>>>>>> 8602b8e6fb89ccb6792407d2ba3bc84b45aed330
     }
 }
