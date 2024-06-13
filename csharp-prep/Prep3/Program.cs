@@ -6,6 +6,7 @@ class Program
     {
         Console.Write("What is the Magic Number? :");
         string userSetGuess = Console.ReadLine();
+<<<<<<< HEAD
         int magicNumber = int.Parse(userSetGuess);
 
 
@@ -32,5 +33,18 @@ class Program
             answer = "no";
         }
         }
+=======
+        int magicNumber = int.pars(userSetGuess);
+
+        Console.Write("What is your guess? :");
+        string userInputGuess = Console.ReadLine();
+        int userGuess = int.pars(userInputGuess);
+
+        if (userGuess > magicNumber)
+        {
+            Console.WriteLine("Guess lower")
+        }
+
+>>>>>>> 8602b8e6fb89ccb6792407d2ba3bc84b45aed330
     }
 }
