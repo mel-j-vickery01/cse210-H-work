@@ -9,26 +9,38 @@ class Program
         string percent_str = Console.ReadLine();
         int calc_int = int.Parse(percent_str);
         Console.Write("Your grade is ");
+        string letterGrade = "";
         if (calc_int >= 90)
         {
-            Console.Write("A");
+            letterGrade += "A";
         }
         else if (calc_int >= 80)
         {
-            Console.Write("B");
+            letterGrade += "B";
         }
         else if (calc_int >= 70)
         {
-            Console.Write("C");
+            letterGrade += "C";
         }
         else if (calc_int >= 60)
         {
-            Console.Write("D");
+            letterGrade += "D";
         }
         else
         {
-            Console.Write("F");
+            letterGrade += "F";
         }
+            Console.WriteLine(letterGrade);
+
+        if (calc_int >= 70)
+        { 
+        Console.WriteLine("Good Job! You've passed! pretty cool bro B)");
+        }
+        else
+        {
+            Console.Write("Dang man, not this time, but effort never failes. Prayer can help focuse your mind! Stay awesome B)");
+        }
+
 
     }
 }
