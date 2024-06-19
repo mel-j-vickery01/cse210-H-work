@@ -18,7 +18,7 @@ class Circle
     {
         return _radius * 2;
     }
-    
+
 
     public double GetRadius()
     {
