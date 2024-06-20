@@ -13,6 +13,7 @@ class Program
             string inputNumber = Console.ReadLine();
             int number = int.Parse(inputNumber);
             if (number != 0)
+        
             {
                 numbers.Add(number);
             }
