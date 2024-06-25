@@ -1,23 +1,41 @@
 using System;
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        string inPut = "0";
-        do
-        {
-        Console.WriteLine("1. write a new Entery");
-        Console.WriteLine("2. Display Journal");
-        Console.WriteLine("3. Read Journal from file");
-        Console.WriteLine("4. Write Journal to file");
-        Console.WriteLine("5. Quit");
-        inPut = Console.ReadLine();
+string journalFilePath = "journal.txt";
+var journal = new Journal(journalFilePath);
+Questions prompt = new Questions();
 
-        if (inPut == "1")
-        {
-            Console.WriteLine("tell me you're working");
-        }
-        }while (inPut != "5");
+string inPut = "0";
+do
+{
+    Console.WriteLine("\n1. write a new Entry");
+    Console.WriteLine("2. Read Entry [Not Saved To File]");
+    Console.WriteLine("3. Save Journal to file");
+    Console.WriteLine("4. Read from current file");
+    Console.WriteLine("5. Quit\n");
+    Console.Write("\nWhat would you like Today? : ");
+    inPut = Console.ReadLine();
+
+    if (inPut == "1")
+    {
+        
+        Console.WriteLine(prompt.Prompt());
+        Console.Write("Enter your Journal Entry: ");
+        string entry = Console.ReadLine();
+        journal.add(entry);
     }
-}
+    if (inPut == "2")
+    {
+        journal.read();
+    }
+
+    if (inPut == "3")
+    {   
+        string entry = File.ReadAllText(journalFilePath);
+        journal.writeToText();
+    }
+    if (inPut == "4")
+    {
+        journal.readFromText();
+    }
+
+} while (inPut != "5");
