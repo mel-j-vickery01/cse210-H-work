@@ -23,5 +23,8 @@ class Program
         con4.DisplayFractionString();
         Console.WriteLine(con4.GetDecimalValue());
 
+        Fraction con5 = new Fraction(15, 16);
+        con5.DisplayFractionString();
+        Console.WriteLine(con5.GetDecimalValue());
     }
 }
