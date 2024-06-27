@@ -4,26 +4,37 @@ using System.Runtime.CompilerServices;
 class Word
 {
 
-    private string _words;
-    private bool _isHidden;
+    private string _word;
+    private bool _hidden;
 
     Word(string word)
     {
-        _words = word; _isHidden = false;
+        _word = word;
+        _hidden = false;
     }
 
 
 
-public void SetHidden();
-{
-    
-}
+    public void SetHidden()
+    {
+        _hidden = true;
+    }
 
 
 
-getword
+    public string GetWord()
+    {
+        if (!_hidden)
+        {
+            return _word;
+        }
+        else
+        {
+            return "___";
+        }
+    }
 
-getwordlength
+
 
 
 
