@@ -1,4 +1,5 @@
 
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 
 class Word
@@ -7,7 +8,7 @@ class Word
     private string _word;
     private bool _hidden;
 
-    Word(string word)
+    public Word(string word)
     {
         _word = word;
         _hidden = false;
@@ -17,22 +18,37 @@ class Word
 
     public void SetHidden()
     {
-        _hidden = true;
+            _hidden = true;   
+    }
+
+    public bool isHidden()
+    {
+        return _hidden;
     }
 
 
-
-    public string GetWord()
+    private string UnderLine()
     {
-        if (!_hidden)
+        if (_hidden == false)
         {
             return _word;
         }
         else
         {
-            return "___";
+            int length = _word.Length;
+            string underScores = string.Concat(Enumerable.Repeat("_", length));
+            return underScores;
+
+
+
         }
     }
+
+    public void Display()
+    {
+        Console.Write($"{UnderLine()} ");
+    }
+
 
 
 
