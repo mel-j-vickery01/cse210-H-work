@@ -31,7 +31,11 @@ class Reference
 
     public string GetReference()
     {
-        string line = $"{_bookName} {_chapter} : {_startvers}";
+        string line = $"{_bookName} {_chapter} : {_startvers} ";
+        if (_endvers != -1)
+        {
+            line = string.Concat(line,$"- {_endvers}" );
+        }
         return line;
     }
 }

@@ -16,6 +16,12 @@ class Scripture
         _refernce = new Reference(name, chapter, startVerse);
         GetListWords(text);
     }
+    public Scripture(string name, int chapter, int startVerse, int endVerse, string text)
+    {
+        _words = new List<Word>();
+        _refernce = new Reference(name, chapter, startVerse, endVerse);
+        GetListWords(text);
+    }
 
     public string GetReference()
     {

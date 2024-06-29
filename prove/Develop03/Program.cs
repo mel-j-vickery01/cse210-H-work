@@ -13,10 +13,13 @@ class Program
         Scripture temp2 = new Scripture("articles of faith", 1, 2, "We believe that men will be punished for their own sins, and not for Adam’s transgression.");
         Scripture temp3 = new Scripture("articles of faith", 1, 3, "We believe that through the Atonement of Christ, all mankind may be saved, by obedience to the laws and ordinances of the Gospel.");
         Scripture temp4 = new Scripture("articles of faith", 1, 4, "We believe that the first principles and ordinances of the Gospel are: first, Faith in the Lord Jesus Christ; second, Repentance; third, Baptism by immersion for the remission of sins; fourth, Laying on of hands for the gift of the Holy Ghost.");
+        Scripture temp5 = new Scripture("Moroni", 10, 3, 6, "3 Behold, I would exhort you that when ye shall read these things, if it be wisdom in God that ye should read them, that ye would remember how merciful the Lord hath been unto the children of men, from the creation of Adam even down until the time that ye shall receive these things, and ponder it in your hearts. \n 4 And when ye shall receive these things, I would exhort you that ye would ask God, the Eternal Father, in the name of Christ, if these things are not true; and if ye shall ask with a sincere heart, with real intent, having faith in Christ, he will manifest the truth of it unto you, by the power of the Holy Ghost.\n 4 And by the power of the Holy Ghost ye may know the truth of all things.");
+
         _scripture.Add(temp1);
         _scripture.Add(temp2);
         _scripture.Add(temp3);
         _scripture.Add(temp4);
+        _scripture.Add(temp5);
         do
         {
             int count = 1;
