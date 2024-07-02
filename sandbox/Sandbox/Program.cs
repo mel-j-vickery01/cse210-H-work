@@ -8,12 +8,14 @@ class Program
     {
         Console.WriteLine("Hello Sandbox World!");
 
-        Circle myCircle = new Circle(10);
-        Console.WriteLine($"{myCircle.GetArea()}");
+        Person person1 = new Person("keven", "yoter", 36, 472);
 
-        Circle unitCircle = new Circle(10);
-        Console.WriteLine($"{unitCircle.GetDiametar()}");
-        Console.WriteLine($"{unitCircle.GetRadius()}");
+
+        FireMan fireman = new FireMan("EMT and para", "billy", "Betty", 28, 189);
+
+        Console.WriteLine(person1.PersonInformation());
+        Console.WriteLine(fireman.FiremanInformation());
+
     }
 }
 
