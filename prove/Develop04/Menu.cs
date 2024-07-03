@@ -2,22 +2,31 @@
 
 class Menu
 {
-    private int input = 0;
-    public void ShowMenu()
+    public int DisplayMenu()
     {
-        while (input != 5)
+        int input = 0;
+        while (input < 1 || input > 5)
         {
-            Console.WriteLine("1. Reflection Activity");
-            Console.WriteLine("2. Breathing Exercise");
-            Console.WriteLine("3. Affermation Exercise");
-            Console.WriteLine("4. Listing Exercise");
+            Console.Clear();
+            Console.WriteLine("Ativities listed");
+            Console.WriteLine("1. Breathing Activity");
+            Console.WriteLine("2. Reflection Activity");
+            Console.WriteLine("3. Affermation Activity");
+            Console.WriteLine("4. Listing Activity");
             Console.WriteLine("5. Quit program");
-
-            input = int.Parse(Console.ReadLine());
-            
-
-
+            try
+            {
+                input = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Input must be a valid intager seen on the list");
+                Console.WriteLine("press enter to continue");
+                Console.ReadLine();
+            }
         }
+        return input;
+
     }
 
 }
