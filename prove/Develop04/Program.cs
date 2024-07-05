@@ -23,14 +23,17 @@ class Program
             if (reponse == 2)
             {
                 reflection.test();
+                reflection.Spinner();
             }
             if (reponse == 3)
             {
                 affermation.test();
+                affermation.Spinner();
             }
             if (reponse == 4)
             {
                 listing.test();
+                listing.Spinner();
             }
         }
     }

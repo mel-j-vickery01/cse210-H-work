@@ -1,5 +1,5 @@
 
-class Listing
+class Listing : Activity
 {
 
     public void test()

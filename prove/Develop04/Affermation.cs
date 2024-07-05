@@ -1,4 +1,4 @@
-class Affermation
+class Affermation : Activity
 {
 
     public void test()

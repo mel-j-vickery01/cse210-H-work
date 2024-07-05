@@ -1,5 +1,5 @@
 
-class Reflection
+class Reflection : Activity
 {
 
     public void test()
