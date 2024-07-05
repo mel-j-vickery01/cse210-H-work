@@ -1,5 +1,6 @@
 class Affermation : Activity
 {
+    public Affermation(string title, string description) : base(title, description){}
 
     public void test()
     {

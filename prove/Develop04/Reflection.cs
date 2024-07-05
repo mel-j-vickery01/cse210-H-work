@@ -1,6 +1,7 @@
 
 class Reflection : Activity
 {
+    public Reflection(string title, string description) : base(title, description){}
 
     public void test()
     {

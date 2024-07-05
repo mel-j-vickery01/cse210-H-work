@@ -1,13 +1,45 @@
 
 class Breathing : Activity
 {
+    public Breathing(string title, string description) : base(title, description) { }
 
-    public void test()
+    public void RunActivity()
     {
-        Console.WriteLine("this is from breathing class");
-        Console.WriteLine("press enter to continue");
-        Console.ReadLine();
+        DisplayWelcome();
+        DisplayInstruction();
+        Console.WriteLine("\nFor this Activity please use Increments of 10s\n");
+        PromptForTime();
+        Console.Clear();
+        Console.WriteLine("\nGet Ready.  .  .");
+        // Spinner();
+
+        while(!Timer())
+        {
+            Console.Write("\nBreath In . . .");
+            CountDown(3);
+            Console.WriteLine("\n");
+            Console.Write("Hold . . .");
+            CountDown(3);
+            Console.WriteLine("\n");
+            Console.Write("Breath Out . . .");
+            CountDown(4);
+            Console.WriteLine();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
+
 
 }
