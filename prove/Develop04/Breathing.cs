@@ -11,9 +11,9 @@ class Breathing : Activity
         PromptForTime();
         Console.Clear();
         Console.WriteLine("\nGet Ready.  .  .");
-        // Spinner();
+        Spinner(2);
 
-        while(!Timer())
+        while (!Timer())
         {
             Console.Write("\nBreath In . . .");
             CountDown(3);
@@ -25,19 +25,7 @@ class Breathing : Activity
             CountDown(4);
             Console.WriteLine();
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
+        EndMessage();
 
     }
 

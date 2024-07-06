@@ -12,10 +12,10 @@ class Activity
         _description = description;
     }
 
-    public void Spinner()
+    public void Spinner(int timeToSpin)
     {
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < timeToSpin; i++)
         {
             Console.Write("|");
 
@@ -45,9 +45,12 @@ class Activity
     {
         Console.WriteLine(_description);
     }
-    public void EndMessage(string endActivity)
+    public void EndMessage()
     {
-        Console.WriteLine($"\n{endActivity}");
+        Console.Clear();
+        Console.WriteLine($"Great job!!!\nYou have completed the {_title} activity");
+        Console.WriteLine("Press enter to return to menu");
+        Console.ReadLine();
     }
     public void PromptForTime()
     {
