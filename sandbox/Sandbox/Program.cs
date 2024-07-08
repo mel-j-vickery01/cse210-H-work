@@ -6,16 +6,32 @@ class Program
 {
     static void Main(string[] args)
     {
+        List <Employee> employees = new List<Employee>();
+
         Console.WriteLine("Hello Sandbox World!");
 
-        Person person1 = new Person("keven", "yoter", 36, 472);
+        Employee employee = new Employee("Mark", 40, 25.15);
+
+        Console.WriteLine($"{employee.GetName()} is due: {employee.GetPay()}");
+
+        ConstructionWorker constructionWorker = new ConstructionWorker("Martha", 40, 27.15);
+
+        Console.WriteLine($"{constructionWorker.GetName()} is due: {constructionWorker.GetPay()}");
+
+        Doctor doc = new Doctor("Belinda", 250000);
+
+        Console.WriteLine($"{doc.GetName()} is due: {doc.GetPay()}");
 
 
-        FireMan fireman = new FireMan("EMT and para", "billy", "Betty", 28, 189);
+        employees.Add(employee);
+        employees.Add(constructionWorker);
+        employees.Add(doc);
 
-        Console.WriteLine(person1.PersonInformation());
-        Console.WriteLine(fireman.FiremanInformation());
 
+        foreach (Employee e in employees)
+        {
+            Console.WriteLine($"{e.GetName()} is due: {e.GetPay()}");
+        }
     }
 }
 
