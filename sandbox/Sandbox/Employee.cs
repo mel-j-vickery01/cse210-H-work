@@ -23,5 +23,9 @@ abstract class Employee
     }
 
     public abstract double InsuranceCost();
+    public override string ToString()
+    {
+        return $"name: {_name}, hours: {_hoursWorked}, wage: {_hourlyWage}";
+    }
 
 }
