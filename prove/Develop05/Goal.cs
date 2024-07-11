@@ -4,6 +4,7 @@ abstract class Goal
 string _discription;
 bool _status;
 int _points;
+string _goalType;
     public Goal(string name, string discription, bool status)
     {
         _name = name;
@@ -12,7 +13,8 @@ int _points;
         _points = 0;
     }
 
-    public abstract int AddScore();
     
+    public abstract void RunActivity();
+    public abstract int RecordEvent();
 
 }

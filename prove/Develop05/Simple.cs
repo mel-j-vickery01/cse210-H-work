@@ -2,10 +2,12 @@ class Simple : Goal
 {
     public Simple(string name, string discription, bool status) : base(name, discription, status)
     {}
-    public override int AddScore()
+    public override void RunActivity()
     {
-        int number = 35;
-        Console.WriteLine("This is working");
-        return number;
+        Console.Write("BIIIG Win.\nLet's goooo");
+    }
+    public override int RecordEvent()
+    {
+        throw new NotImplementedException();
     }
 }
