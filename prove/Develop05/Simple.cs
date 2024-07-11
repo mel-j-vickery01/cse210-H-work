@@ -4,7 +4,7 @@ class Simple : Goal
     {}
     public override void RunActivity()
     {
-        Console.Write("BIIIG Win.\nLet's goooo");
+        Console.WriteLine("BIIIG Win.\nLet's goooo");
     }
     public override int RecordEvent()
     {
