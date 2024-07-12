@@ -3,16 +3,20 @@ class Goals
     List<Goal> goals = new List<Goal>();
     int _totalScore = 0;
     int _score;
-    public Goals(Goal goal, int score)
+    public Goals()
     {
-        goals.Add(goal);
-        _score = score;
+        _score = 0;
     }
     public void DisplayGoals()
     {
-        foreach(Goal i in goals)
+        foreach (Goal i in goals)
         {
             Console.WriteLine(i);
         }
     }
+    public void AddGoal(Goal goal)
+    {
+        goals.Add(goal);
+    }
+
 }
