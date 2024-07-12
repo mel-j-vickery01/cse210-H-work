@@ -9,10 +9,7 @@ class Simple : Goal
     {
         SetName();
         SetDiscription();
-        // Simple simp1 = new Simple(name, discription, false);
-    }
-    public override int RecordEvent()
-    {
-        throw new NotImplementedException();
+        SetPoints();
+        SetGoalType("Simple");
     }
 }

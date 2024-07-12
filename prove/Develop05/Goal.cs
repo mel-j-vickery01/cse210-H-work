@@ -22,12 +22,31 @@ abstract class Goal
         Console.Write("Write a short discription for your Goal: ");
         _discription = Console.ReadLine();
     }
+    public void SetPoints()
+    {
+        Console.Write("How many points is this worth?: ");
+        _points = int.Parse(Console.ReadLine());
+    }
+    public void SetGoalType(string type)
+    {
+        _goalType = type;
+    }
     public override string ToString()
     {
-        return $"{_name}, {_discription}";
+        return $"{_goalType} Goal, {_name}, {_discription}, worth {_points} points";
     }
 
     public abstract void RunActivity();
-    public abstract int RecordEvent();
+    public bool CheckDone()
+    {
+        if (_status)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 }

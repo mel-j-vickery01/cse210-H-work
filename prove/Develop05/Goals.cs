@@ -1,14 +1,13 @@
 class Goals
 {
     List<Goal> goals = new List<Goal>();
-    int _totalScore = 0;
-    int _score;
+    private int _totalScore;
+    private string fileName = "goals2.txt";
     public Goals()
-    {
-        _score = 0;
-    }
+    { }
     public void DisplayGoals()
     {
+        Console.WriteLine($"your Score:{_totalScore}");
         foreach (Goal i in goals)
         {
             Console.WriteLine(i);
@@ -18,5 +17,29 @@ class Goals
     {
         goals.Add(goal);
     }
+    public void SumScore(bool isDone, int score)
+    {
+        foreach (Goal i in goals)
+        {
+            if (isDone)
+            {
+                _totalScore = _totalScore + score;
+            }
+        }
+    }
+    public void SaveGoals()
+    {
+        using StreamWriter outputFile = new StreamWriter(fileName);
+        {
 
+            foreach (Goal i in goals)
+            {
+                outputFile.Write(i.ToString());
+            }
+        }
+    }
+public void RecordEvent()
+{
+    Console.WriteLine("which goal did you a compleat ");
+}
 }

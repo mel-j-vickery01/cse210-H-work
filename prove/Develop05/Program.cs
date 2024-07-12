@@ -19,10 +19,20 @@ class Program
                     simple.RunActivity();
                     goals.AddGoal(simple);
                 }
+                else if(subinput == 2)
+                {
+                    Eternal eternal = new Eternal();
+                    eternal.RunActivity();
+                    goals.AddGoal(eternal);
+                }
             }
             else if (input == 2)
             {
                 goals.DisplayGoals();
+            }
+            else if (input == 3)
+            {
+                goals.SaveGoals();
             }
         }
     }
