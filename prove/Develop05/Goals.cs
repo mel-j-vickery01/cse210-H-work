@@ -34,7 +34,26 @@ class Goals
 
             foreach (Goal i in goals)
             {
-                outputFile.Write(i.ToString());
+                outputFile.WriteLine(i.ToFile());
+            }
+        }
+    }
+    public void LoadGoals()
+    {
+        string[] lines = File.ReadAllLines(fileName);
+        foreach(string line in lines)
+        {
+            string[] items = line.Split("#");
+            string goalType = items[0];
+            if(goalType == "Simple")
+            {
+                string name = items[1];
+                string discription = items[2];
+                int points = int.Parse(items[3]);
+                bool status = bool.Parse(items[4]);
+                Simple simple = new Simple(name,discription,points, status);
+                simple.SetGoalType(goalType);
+                goals.Add(simple);
             }
         }
     }

@@ -1,9 +1,9 @@
 class Simple : Goal
 {
     
-    public Simple(string name, string discription, bool status) : base(name, discription, status)
+    public Simple(string name, string discription, int points, bool status) : base(name, discription, points, status)
     { }
-    public Simple() :  base("","",false)
+    public Simple() :  base("","", 0, false)
     {}
     public override void RunActivity()
     {

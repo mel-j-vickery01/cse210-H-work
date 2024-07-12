@@ -1,8 +1,8 @@
 class Eternal : Goal
 {
-    public Eternal(string name, string discription, bool status) : base(name, discription, status)
+    public Eternal(string name, string discription, int points, bool status) : base(name, discription, points, status)
     { }
-    public Eternal() : base("","",false)
+    public Eternal() : base("","", 0,false)
     {}
     public override void RunActivity()
     {

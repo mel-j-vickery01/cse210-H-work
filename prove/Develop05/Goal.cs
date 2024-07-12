@@ -5,12 +5,12 @@ abstract class Goal
     private bool _status;
     private int _points;
     private string _goalType;
-    public Goal(string name, string discription, bool status)
+    public Goal(string name, string discription, int points, bool status)
     {
         _name = name;
         _discription = discription;
         _status = status;
-        _points = 0;
+        _points = points;
     }
     public void SetName()
     {
@@ -35,6 +35,11 @@ abstract class Goal
     {
         return $"{_goalType} Goal, {_name}, {_discription}, worth {_points} points";
     }
+    public virtual string ToFile()
+    {
+        return $"{_goalType}#{_name}#{_discription}#{_points}#{_status}";
+    }
+
 
     public abstract void RunActivity();
     public bool CheckDone()

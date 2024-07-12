@@ -1,1 +1,2 @@
-Simple Goal, gefg, gfefgb, worth 3 points
+Simple#throw a big rock#throw rock into water. big splash#20#False
+Simple#yeet#throw frizby#34#False
