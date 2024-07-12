@@ -38,6 +38,10 @@ class Program
             {
                 goals.LoadGoals();
             }
+            else if(input == 5)
+            {
+                goals.RecordEvent();
+            }
         }
     }
 }

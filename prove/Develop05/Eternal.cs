@@ -11,4 +11,8 @@ class Eternal : Goal
         SetPoints();
         SetGoalType("Eternal");
     }
+    public override int ReportEvent()
+    {
+        return GetPoints();
+    }
 }

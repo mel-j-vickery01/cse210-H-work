@@ -27,13 +27,26 @@ abstract class Goal
         Console.Write("How many points is this worth?: ");
         _points = int.Parse(Console.ReadLine());
     }
+    public int GetPoints()
+    {
+        return _points;
+    }
     public void SetGoalType(string type)
     {
         _goalType = type;
     }
+    public void MarkDone()
+    {
+        _status = true;
+    }
     public override string ToString()
     {
-        return $"{_goalType} Goal, {_name}, {_discription}, worth {_points} points";
+        string statusMarker = " ";
+        if (_status)
+        {
+            statusMarker = "X";
+        }
+        return $"[{statusMarker}]{_goalType} Goal, {_name}, {_discription}, worth {_points} points";
     }
     public virtual string ToFile()
     {
@@ -42,16 +55,5 @@ abstract class Goal
 
 
     public abstract void RunActivity();
-    public bool CheckDone()
-    {
-        if (_status)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
+    public abstract int ReportEvent();
 }

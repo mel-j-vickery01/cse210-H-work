@@ -7,31 +7,33 @@ class Goals
     { }
     public void DisplayGoals()
     {
+        Console.WriteLine();
+        int count = 1;
         Console.WriteLine($"your Score:{_totalScore}");
         foreach (Goal i in goals)
         {
-            Console.WriteLine(i);
+            Console.WriteLine($"{count}. {i}");
+            count++;
         }
+        Console.WriteLine();
     }
+
     public void AddGoal(Goal goal)
     {
         goals.Add(goal);
     }
-    public void SumScore(bool isDone, int score)
+    public void RecordEvent()
     {
-        foreach (Goal i in goals)
-        {
-            if (isDone)
-            {
-                _totalScore = _totalScore + score;
-            }
-        }
+        Console.WriteLine("Which goal did you want to report on?");
+        DisplayGoals();
+        int input = int.Parse(Console.ReadLine());
+        _totalScore += goals[input-1].ReportEvent();
     }
     public void SaveGoals()
     {
         using StreamWriter outputFile = new StreamWriter(fileName);
         {
-
+            outputFile.WriteLine($"score#{_totalScore}");
             foreach (Goal i in goals)
             {
                 outputFile.WriteLine(i.ToFile());
@@ -41,24 +43,24 @@ class Goals
     public void LoadGoals()
     {
         string[] lines = File.ReadAllLines(fileName);
-        foreach(string line in lines)
+        foreach (string line in lines)
         {
             string[] items = line.Split("#");
             string goalType = items[0];
-            if(goalType == "Simple")
+            if(goalType == "score")
+            {
+                _totalScore = int.Parse(items[1]);
+            }
+            else if (goalType == "Simple")
             {
                 string name = items[1];
                 string discription = items[2];
                 int points = int.Parse(items[3]);
                 bool status = bool.Parse(items[4]);
-                Simple simple = new Simple(name,discription,points, status);
+                Simple simple = new Simple(name, discription, points, status);
                 simple.SetGoalType(goalType);
                 goals.Add(simple);
             }
         }
     }
-public void RecordEvent()
-{
-    Console.WriteLine("which goal did you a compleat ");
-}
 }
