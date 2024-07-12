@@ -1,4 +1,4 @@
-score#334
-Simple#throw a big rock#throw rock into water. big splash#20#False
+score#354
+Simple#throw a big rock#throw rock into water. big splash#20#True
 Simple#yeet#throw frizby#34#True
 Simple#cry#in joy you cry great tears of joy#300#True
