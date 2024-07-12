@@ -2,7 +2,7 @@ class Goals
 {
     List<Goal> goals = new List<Goal>();
     private int _totalScore;
-    private string fileName = "goals2.txt";
+    private string fileName = "goals.txt";
     public Goals()
     { }
     public void DisplayGoals()
