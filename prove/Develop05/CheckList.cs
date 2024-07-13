@@ -34,7 +34,7 @@ class CheckList : Goal
     }
     public override string ToFile()
     {
-        return $"{base.ToString()} times completed: {_timesCompleted} out of: {_toDo}";
+        return $"{base.ToFile()}#{_timesCompleted}#{_toDo}";
     }
 
     public override int ReportEvent()

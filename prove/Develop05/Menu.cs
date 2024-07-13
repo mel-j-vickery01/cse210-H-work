@@ -19,7 +19,7 @@ class Menu
     {
         int input;
         Console.WriteLine("What type of Goal do you want to set?");
-        Console.WriteLine("1. Simple\n3. Eternal\n2. Check List");
+        Console.WriteLine("1. Simple\n2. Eternal\n3. Check List");
         return input = int.Parse(Console.ReadLine());
 
     }
