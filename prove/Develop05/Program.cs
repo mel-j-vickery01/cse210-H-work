@@ -25,6 +25,12 @@ class Program
                     eternal.RunActivity();
                     goals.AddGoal(eternal);
                 }
+                else if (subinput == 3)
+                {
+                    CheckList check = new CheckList();
+                    check.RunActivity();
+                    goals.AddGoal(check);
+                }
             }
             else if (input == 2)
             {

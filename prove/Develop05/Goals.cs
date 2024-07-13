@@ -27,7 +27,7 @@ class Goals
         Console.WriteLine("Which goal did you want to report on?");
         DisplayGoals();
         int input = int.Parse(Console.ReadLine());
-        _totalScore += goals[input-1].ReportEvent();
+        _totalScore += goals[input - 1].ReportEvent();
     }
     public void SaveGoals()
     {
@@ -47,7 +47,7 @@ class Goals
         {
             string[] items = line.Split("#");
             string goalType = items[0];
-            if(goalType == "score")
+            if (goalType == "score")
             {
                 _totalScore = int.Parse(items[1]);
             }
@@ -60,6 +60,28 @@ class Goals
                 Simple simple = new Simple(name, discription, points, status);
                 simple.SetGoalType(goalType);
                 goals.Add(simple);
+            }
+            else if (goalType == "Eternal")
+            {
+                string name = items[1];
+                string discription = items[2];
+                int points = int.Parse(items[3]);
+                bool status = bool.Parse(items[4]);
+                int completed = int.Parse(items[5]);
+                Eternal eternal = new Eternal(name, discription, points, status, completed);
+                eternal.SetGoalType(goalType);
+                goals.Add(eternal);
+            }
+            else if (goalType == "CheckList")
+            {
+                string name = items[1];
+                string discription = items[2];
+                int points = int.Parse(items[3]);
+                bool status = bool.Parse(items[4]);
+                int completed = int.Parse(items[5]);
+                CheckList check = new CheckList(name, discription, points, status, completed);
+                check.SetGoalType(goalType);
+                goals.Add(check);
             }
         }
     }
