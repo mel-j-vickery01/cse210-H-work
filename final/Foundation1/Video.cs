@@ -6,7 +6,14 @@ class Video
     private int _vidLength;
 
     List<Comment> _comments = new List<Comment>();
-
+public Video(string title, string author, int length)
+{
+    _title = title;
+    _author = author;
+    _vidLength = length;
+}
+public Video()
+{}
     public void SetText()
     {
         Console.Write("What is the title of the video?: ");
@@ -20,12 +27,10 @@ class Video
     public void Display()
     {
         Console.WriteLine($"{_title}, made by {_author}, Video is {_vidLength} seconds long");
-        Console.Write("Comments: ");
-        DisplayComments();
     }
-    public string GetTitle()
+    public void GetTitle()
     {
-        return _title;
+        Console.Write(_title);
     }
     public string Getauthor()
     {
@@ -33,12 +38,18 @@ class Video
     }
     public void DisplayComments()
     {
+        Console.WriteLine("Comments made: ");
         foreach (Comment i in _comments)
         {
-            Console.WriteLine(i);
+            Console.Write("    ");
+            i.DisplayComment();
         }
     }
-    public void AddComment()
+    public void AddComment(Comment comment)
+    {
+        _comments.Add(comment);
+    }
+    public void MakeComment()
     {
         bool input = false;
         while (!input)
