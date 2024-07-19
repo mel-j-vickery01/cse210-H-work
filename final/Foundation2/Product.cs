@@ -11,15 +11,27 @@ class Product
         _ID = ID;
         _pricePerUnit = unitPrice;
         _quantity = quantity;
-        ItemCost(_pricePerUnit, _quantity);
+        _itemCost = ItemCost(_pricePerUnit, _quantity);
     }
-    private void ItemCost(int unit, int quantity)
+    public int ItemCost(int unit, int quantity)
     {
-        _itemCost = unit * quantity;
+        return unit * quantity;
     }
-
+    public int GetUnitPrice()
+    {
+        return _pricePerUnit;
+    }
+    public int GetQuantity()
+    {
+        return _quantity;
+    }
     public void Display()
     {
-        Console.WriteLine($"{_name}: {_ID} ${_pricePerUnit} * {_quantity}: ${_itemCost}");
+        Console.WriteLine($"{_name}: {_ID}  ${_pricePerUnit} * {_quantity}: ${_itemCost}");
     }
+    public void DisplayPacking()
+    {
+        Console.WriteLine($"{_name}: {_ID}");
+    }
+
 }

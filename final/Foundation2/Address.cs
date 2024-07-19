@@ -11,6 +11,17 @@ class Address
         _state = state;
         _country = country;
     }
+    public bool IsInUSA()
+    {
+        if(_country == "USA")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     public void Display()
     {
         Console.WriteLine($"{_streetnumber}, {_city}: {_state}, {_country}");
