@@ -7,23 +7,21 @@ abstract class Activity
         _date = date;
         _lengthMinutes = lengthMinutes;
     }
-    public virtual int Pace(int time, int distance)
+    public int GetTime()
     {
-        int pace = 0;
-        return pace = time / distance;
+        return _lengthMinutes;
     }
-    public virtual int Speed(int distance, int pace)
+    public double Pace(double distance, double time)
     {
-        int speed = 0;
-        return speed = distance * pace;
+        return time / distance;
     }
-    public virtual int Distance(int time, int pace)
+    public double Speed(double pace)
     {
-        int distance = 0;
-        return distance = pace * time;
+        return 60 / pace;
     }
     public virtual void GetSummary()
     {
+        Console.Write($"{_date} {base.ToString()} ({_lengthMinutes})");
     }
 
 }
